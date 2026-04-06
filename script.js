@@ -31,12 +31,12 @@
   window.addEventListener('resize', () => { resize(); buildStars(); });
 
   // ── Configuration ──────────────────────────────────────────
-  const STAR_COUNT = 420;          // more stars for a richer starfield
+  const STAR_COUNT = window.innerWidth < 600 ? 150 : 420;          // more stars for a richer starfield
   const MAX_SPEED = 0.14;         // gentle drift
 
   // Hover-only constellation — structures form only near the cursor
-  const HOVER_RADIUS = 180;    // px — cursor influence zone
-  const HOVER_STAR_LINK = 100;    // px — star↔star link distance
+  const HOVER_RADIUS = window.innerWidth < 600 ? 80 : 180;    // px — cursor influence zone
+  const HOVER_STAR_LINK = window.innerWidth < 600 ? 60 : 100;    // px — star↔star link distance
   const HOVER_LINE_ALPHA = 0.28;   // line brightness (visible but not harsh)
   const HOVER_BOOST = 0.25;   // star brightness boost near cursor
 
@@ -70,6 +70,10 @@
     mouse.x = -9999;
     mouse.y = -9999;
   });
+  window.addEventListener('mousemove', (e) => {
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
+}, { passive: true });
 
   // ── Helpers ──────────────────────────────────────────
   function dist2(a, b) {
