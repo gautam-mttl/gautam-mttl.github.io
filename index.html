@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Portfolio — Developer &amp; Creator</title>
+  <meta name="description" content="Personal portfolio showcasing projects, experience, and creative work." />
+
+  <!-- Google Fonts: Orbitron (headings) + Rajdhani (body/tabs) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Font Awesome for social / resume icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ══════════════════════════════════════════════
+       STARFIELD CANVAS — sits behind everything
+       ══════════════════════════════════════════════ -->
+  <canvas id="starfield"></canvas>
+
+  <!-- ══════════════════════════════════════════════
+       HERO SECTION
+       ══════════════════════════════════════════════ -->
+  <main id="hero">
+
+    <!-- Profile Photo -->
+    <!--
+      CUSTOMIZE: PROFILE PHOTO
+      - Replace 'assets/images/profile.jpeg' with your own photo path
+      - Recommended: square image, min 400×400px
+    -->
+    <div class="profile-ring">
+      <img id="profile-img" src="assets/images/profile.jpeg" alt="Profile Photo" class="profile-photo" />
+    </div>
+
+    <!-- Connector line: photo → divider -->
+    <div class="v-line top-v-line"></div>
+
+    <!-- Top horizontal divider -->
+    <div class="h-divider"></div>
+
+    <!-- Name -->
+    <!--
+      CUSTOMIZE: Replace with your full name
+    -->
+    <h1 class="hero-name" id="hero-name">GAUTAM MITTAL</h1>
+
+    <!-- Tagline -->
+    <!--
+      CUSTOMIZE: Update tagline to describe yourself
+    -->
+    <p class="hero-tagline" id="hero-tagline">Developer &bull; Designer &bull; Creator</p>
+
+    <!-- Bottom horizontal divider -->
+    <div class="h-divider"></div>
+
+    <!-- Connector line: divider → nav -->
+    <div class="v-line bot-v-line"></div>
+
+    <!-- ── NAV TABS ── -->
+    <nav class="nav-tabs" id="nav-tabs" aria-label="Portfolio sections">
+      <button class="tab-btn" data-panel="intro" id="tab-intro">INTRO</button>
+      <button class="tab-btn" data-panel="experience" id="tab-experience">EXPERIENCE</button>
+      <button class="tab-btn" data-panel="projects" id="tab-projects">PROJECTS</button>
+      <button class="tab-btn" data-panel="activities" id="tab-activities">ACTIVITIES</button>
+      <button class="tab-btn" data-panel="contact" id="tab-contact">CONTACT</button>
+    </nav>
+
+    <!-- ── SOCIAL ICONS ── -->
+    <!--
+      CUSTOMIZE: Add your social links below
+      - Replace href="#" with your actual profile URLs
+    -->
+    <div class="social-icons" id="social-icons">
+      <a href="https://github.com/gautam-mttl" target="_blank" rel="noopener" class="social-btn" id="btn-github"
+        aria-label="GitHub">
+        <i class="fa-brands fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/gautamm01/" target="_blank" rel="noopener" class="social-btn"
+        id="btn-linkedin" aria-label="LinkedIn">
+        <i class="fa-brands fa-linkedin-in"></i>
+      </a>
+      <a href="https://twitter.com/" target="_blank" rel="noopener" class="social-btn" id="btn-twitter"
+        aria-label="Twitter / X">
+        <i class="fa-brands fa-x-twitter"></i>
+      </a>
+      <a href="mailto:gautammittal2003@gmail.com" class="social-btn" id="btn-email" aria-label="Email">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+    </div>
+
+    <!-- ── RESUME BUTTON ── -->
+    <!--
+      CUSTOMIZE: Change the href to point to your resume PDF
+      - Place your resume in assets/resume/resume.pdf
+    -->
+    <a href="assets/Gautam_Mittal_Resume.pdf" download class="resume-btn" id="resume-btn">
+      <i class="fa-solid fa-file-arrow-down"></i>
+      &nbsp;RESUME
+    </a>
+
+    <!-- CUSTOMIZE: Update credit name and link -->
+    <p class="hero-footer">
+      Created and photographed with ♥ by:
+      <a href="#" target="_blank" rel="noopener">GAUTAM</a>
+    </p>
+
+  </main><!-- /#hero -->
+
+
+  <!-- ══════════════════════════════════════════════
+       PANEL OVERLAYS
+       Each panel is triggered by its matching tab btn
+       ══════════════════════════════════════════════ -->
+
+  <!-- ── INTRO PANEL ── -->
+  <!--
+    CUSTOMIZE: INTRO SECTION
+    - Replace the <img> src paths in the photo grid with your own photos
+    - Photos in assets/images/intro/  (recommended 400×300px each)
+    - Update the bio text below
+  -->
+  <div class="panel-overlay" id="panel-intro" role="dialog" aria-modal="true" aria-label="Intro">
+    <div class="panel-card">
+      <button class="panel-close" id="close-intro" aria-label="Close intro panel">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <h2 class="panel-title">INTRO</h2>
+
+      <!-- Photo grid: 3 rows × 5 cols → but gracefully fill with available images -->
+      <div class="intro-grid" id="intro-grid">
+        <!--
+          CUSTOMIZE: Replace src values with your own photos
+          Grid is 3 rows × 5 cols = 15 slots
+          Empty cells kept so the grid stays uniform
+        -->
+        <div class="grid-cell"><img src="assets/images/intro/intro1.jpg" alt="Photo 1" loading="lazy" /></div>
+        <div class="grid-cell"><img src="assets/images/intro/intro2.jpg" alt="Photo 2" loading="lazy" /></div>
+        <div class="grid-cell"><img src="assets/images/intro/intro3.jpeg" alt="Photo 3" loading="lazy" /></div>
+        <div class="grid-cell"><img src="assets/images/intro/intro4.jpg" alt="Photo 4" loading="lazy" /></div>
+        <div class="grid-cell placeholder-cell"></div>
+
+        <div class="grid-cell placeholder-cell"></div>
+        <div class="grid-cell placeholder-cell"></div>
+        <div class="grid-cell placeholder-cell"></div>
+        <div class="grid-cell placeholder-cell"></div>
+        <div class="grid-cell placeholder-cell"></div>
+
+        <div class="grid-cell placeholder-cell"></div>
+        <div class="grid-cell placeholder-cell"></div>
+        <div class="grid-cell placeholder-cell"></div>
+        <div class="grid-cell placeholder-cell"></div>
+        <div class="grid-cell placeholder-cell"></div>
+      </div>
+
+      <!-- Bio -->
+      <div class="intro-bio">
+        <p>
+          If you had to describe Gautam in two words, it'd be a <strong>"Thoughtful Builder"</strong> — someone who
+          doesn't just write code, but crafts experiences. Based out of Jaipur, currently finishing his final year in
+          Computer Science at Bennett University with a GPA that speaks before he does.
+        </p>
+        <p>
+          He sits at the intersection of <strong>engineering and design</strong> — drawn equally to the logic of a clean
+          backend architecture and the nuance of a pixel-perfect interface. His stack of choice? Vanilla JS, Next.js,
+          and Node/Express — tools he wields with intention, not just familiarity.
+        </p>
+        <p>
+          When he's not pushing commits or obsessing over UI details, you'll find him at the gym, losing himself in
+          music, or somewhere in a good conversation. He believes the best products are built by people who actually
+          care — and that's exactly the kind of developer he is.
+        </p>
+      </div>
+    </div>
+  </div><!-- /#panel-intro -->
+
+
+  <!-- ── EXPERIENCE PANEL ── -->
+  <!--
+    CUSTOMIZE: EXPERIENCE SECTION
+    - Update each .exp-item with your actual work experience
+    - Replace company names, roles, dates, and bullet points
+    - Add more .exp-item blocks as needed
+  -->
+  <div class="panel-overlay" id="panel-experience" role="dialog" aria-modal="true" aria-label="Experience">
+    <div class="panel-card">
+      <button class="panel-close" id="close-experience" aria-label="Close experience panel">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <h2 class="panel-title">EXPERIENCE</h2>
+
+      <div class="exp-list" id="exp-list">
+
+        <!-- CUSTOMIZE: Experience item 1 -->
+        <div class="exp-item">
+          <div class="exp-header">
+            <h3 class="exp-role">Placement Coordinator</h3>
+            <span class="exp-dates">May 2024 – Sep 2025</span>
+          </div>
+          <p class="exp-company">Bennett University Placement Committee — India</p>
+          <ul class="exp-bullets">
+            <li>Spearheaded CareerCon 1.0 — a flagship placement event bridging students and industry recruiters</li>
+            <li>Coordinated 50+ company campus recruitment drives, liaising directly with HR teams and placement
+              officers</li>
+            <li>Managed end-to-end logistics for recruitment cycles, ensuring smooth communication between students and
+              companies</li>
+            <!-- CUSTOMIZE: Add more bullets -->
+          </ul>
+        </div>
+
+        <!-- CUSTOMIZE: Experience item 2 -->
+        <div class="exp-item">
+          <div class="exp-header">
+            <h3 class="exp-role">Marketing Lead & Web Developer</h3>
+            <span class="exp-dates">May 2023 - Dec 2023</span>
+          </div>
+          <p class="exp-company">Computer Society of India (CSI) — Bennett University Chapter </p>
+          <ul class="exp-bullets">
+            <li>Led marketing and sponsorship outreach for Hunt.ai — a flagship tech event, successfully onboarding
+              multiple sponsors</li>
+            <li>Designed and developed the official Hunt.ai event website from scratch, handling both UI and deployment
+            </li>
+            <li>Drove cross-functional collaboration between design, tech and management teams to deliver the event
+              end-to-end</li>
+          </ul>
+        </div>
+
+        <!-- CUSTOMIZE: Add more .exp-item blocks here -->
+
+      </div><!-- /#exp-list -->
+    </div>
+  </div><!-- /#panel-experience -->
+
+
+  <!-- ── PROJECTS PANEL ── -->
+  <!--
+    CUSTOMIZE: PROJECTS SECTION
+    - Edit the `projects` array in script.js — JS renders everything here
+    - Add a `category` field to group projects under section headers
+    - Project screenshots go in assets/images/projects/
+  -->
+  <div class="panel-overlay" id="panel-projects" role="dialog" aria-modal="true" aria-label="Projects">
+    <div class="panel-card">
+      <button class="panel-close" id="close-projects" aria-label="Close projects panel">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <h2 class="panel-title">PROJECTS</h2>
+
+      <!-- JS renders vertical list grouped by category -->
+      <div class="projects-list" id="projects-list"></div>
+    </div>
+  </div><!-- /#panel-projects -->
+
+
+  <!-- ── ACTIVITIES PANEL ── -->
+  <!--
+    CUSTOMIZE: ACTIVITIES SECTION
+    - Replace each .activity-item with your own clubs, hackathons, hobbies
+    - Add an optional image: <img src="..." class="activity-img" />
+    - Photos go in assets/images/activities/
+  -->
+  <div class="panel-overlay" id="panel-activities" role="dialog" aria-modal="true" aria-label="Activities">
+    <div class="panel-card">
+      <button class="panel-close" id="close-activities" aria-label="Close activities panel">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <h2 class="panel-title">ACTIVITIES</h2>
+
+      <div class="activities-list" id="activities-list">
+
+        <!-- CUSTOMIZE: Activity item 1 -->
+        <div class="activity-item">
+          <!-- CUSTOMIZE: Uncomment and replace src to add a photo
+          <img src="assets/images/activities/hack.jpg" alt="Hackathon" class="activity-img" />
+          -->
+          <h3 class="activity-title">Hackathon Organizer</h3>
+          <p class="activity-role">Organizer • 2024</p>
+          <p class="activity-desc">
+            Lead organizer for a 24-hour hackathon with 200+ participants, managing
+            logistics, sponsorships, and workshops.
+          </p>
+        </div>
+
+        <!-- CUSTOMIZE: Activity item 2 -->
+        <div class="activity-item">
+          <h3 class="activity-title">Photography &amp; Visual Art</h3>
+          <p class="activity-role">Hobby</p>
+          <p class="activity-desc">
+            Amateur landscape and street photographer. Exhibited work at the campus
+            annual art show.
+          </p>
+        </div>
+
+        <!-- CUSTOMIZE: Add more .activity-item blocks here -->
+
+      </div><!-- /#activities-list -->
+    </div>
+  </div><!-- /#panel-activities -->
+
+
+  <!-- ── CONTACT PANEL ── -->
+  <!--
+    CUSTOMIZE: CONTACT SECTION
+    - Update social links + email address
+    - Optionally wire up the form with a backend (Formspree, Netlify Forms, etc.)
+  -->
+  <div class="panel-overlay" id="panel-contact" role="dialog" aria-modal="true" aria-label="Contact">
+    <div class="panel-card">
+      <button class="panel-close" id="close-contact" aria-label="Close contact panel">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <h2 class="panel-title">CONTACT</h2>
+
+      <div class="contact-content">
+        <div class="contact-left">
+
+          <p class="contact-label">EMAIL</p>
+
+          <!-- CUSTOMIZE: Replace with your email -->
+          <p class="contact-email-type">Personal :</p>
+          <a href="https://mail.google.com/mail/?view=cm&to=gautammittal2003@gmail.com" target="_blank"
+            class="contact-email-text">
+            gautammittal2003@gmail.com
+          </a>
+
+        </div>
+
+        <div class="contact-right">
+          <!-- CUSTOMIZE: Update social links -->
+          <div class="contact-social-row">
+            <a href="https://linkedin.com/in/gautamm01" target="_blank" rel="noopener" class="social-btn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/gautam-mttl" target="_blank" rel="noopener" class="social-btn">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://twitter.com/" target="_blank" rel="noopener" class="social-btn">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+          </div>
+
+          <a href="assets/Gautam_Mittal_Resume.pdf" download class="resume-btn contact-resume-btn">
+            <i class="fa-solid fa-file-arrow-down"></i>
+            &nbsp;RESUME
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /#panel-contact -->
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>
