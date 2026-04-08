@@ -270,8 +270,8 @@ const projects = [
     title: 'VideoTube — Scalable Video Platform',
     description: 'A production-grade backend for a video streaming platform — built to handle real scale. Features authentication, video uploads, comments, subscriptions and a clean modular API architecture, all backed by MongoDB.',
     techStack: ['Node.js', 'Express.js', 'MongoDB', 'JWT', 'REST APIs'],
-    imageUrl: '',                           // CUSTOMIZE: 'assets/images/projects/proj1.png'
-    liveLink: '#',
+    imageUrl: 'assets/images/projects/proj1.png',                           // CUSTOMIZE: 'assets/images/projects/proj1.png'
+    liveLink: 'https://documenter.getpostman.com/view/41863970/2sBXirhnZn',
     githubLink: 'https://github.com/gautam-mttl/backend-videotube-application',
   },
   // CUSTOMIZE: Project 2
@@ -280,7 +280,7 @@ const projects = [
     title: 'AI Chat Assistant — Gemini API',
     description: 'A sleek, interactive AI chat interface powered by Google\'s Gemini API. Features contextual response generation, dynamic message rendering and persistent chat history — built entirely in vanilla JS.',
     techStack: ['JavaScript', 'HTML', 'CSS', 'Gemini API'],
-    imageUrl: '',
+    imageUrl: 'assets/images/projects/proj2.png',
     liveLink: 'https://gautam-mttl.github.io/gemini-chat-ui/',
     githubLink: 'https://github.com/gautam-mttl/gemini-chat-ui',
   },
@@ -290,8 +290,8 @@ const projects = [
     title: 'Enterprise Leave Management System',
     description: 'A fully automated leave management platform built on ServiceNow — complete with custom tables, dynamic UI policies, business rule enforcement and Flow Designer-powered approval pipelines.',
     techStack: ['ServiceNow', 'Flow Designer', 'Business Rules', 'Client Scripts'],
-    imageUrl: '',
-    liveLink: '#',
+    imageUrl: 'assets/images/projects/proj3.gif',
+    liveLink: 'https://drive.google.com/file/d/1OODpNXWNnuRtS9KsdjQexNxesjnndTfA/view?usp=sharing',
   },
   {
     category: 'Research & Development',                 // CUSTOMIZE: new category = new section header
